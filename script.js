@@ -33,3 +33,43 @@ i need computerchoice to randomly return 0, 1, or 2 in the array
 */
 let getComputerChoice = choices[Math.floor(Math.random() * choices.length)];
 
+/* Math.random generates random number between 0 and 1, not including 1. 
+multiply it by the .length of the choices array which is 3,
+use Math.floor to round down to the nearest integer so 0, 1, or 2
+let getComputerChoice = that. this is a function expression */
+
+let userSelection = prompt('Rock, Paper, or Scissors?');
+let playerSelection = userSelection.toLowerCase();
+let computerSelection = getComputerChoice;
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'rock' && computerSelection === 'paper') {
+        return 'YOU LOSE!';
+    } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+        return 'TIE!';
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'YOU WIN!';
+    }
+
+    if (playerSelection === 'paper' && computerSelection === 'paper') {
+        return 'TIE!';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return 'YOU WIN!';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return 'YOU LOSE!';
+    }
+
+    if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return 'YOU WIN!';
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return 'YOU LOSE';
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        return 'TIE!';
+    }
+
+}
+
+
+
+
+
