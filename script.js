@@ -38,15 +38,18 @@ multiply it by the .length of the choices array which is 3,
 use Math.floor to round down to the nearest integer so 0, 1, or 2
 let getComputerChoice = that. this is a function expression */
 
-let userSelection = prompt('Rock, Paper, or Scissors?');
-let playerSelection = userSelection.toLowerCase();
-let computerSelection = getComputerChoice;
+
 
 let playerScore = 0
 let compScore = 0
 
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+    let userSelection = prompt('Rock, Paper, or Scissors?');
+    let playerSelection = userSelection.toLowerCase();
+    let computerSelection = choices[Math.floor(Math.random() * choices.length)];
+
+
     if (playerSelection === computerSelection) {
         console.log('TIE!');
     
@@ -89,33 +92,38 @@ its telling to use console log to display the results of each round and the winn
 at the end. which means i need to change my playRound function to console.log
 where it says return
 
-DONE and then the console.log(needs to be something more useful like the score. but how?!
 
 DONE ok i prob need different function to keep the score
 and another different function to console.log(the winner of the round
 
-is it all going to be inside this loop thing? i guess so...
-
-ok so first. i need to change my playRound function to console.log
-i feel sad bc i wrote it and now i change it. but i committed it to github
-so i can go back and see it right? yes that is the literal point of git
-
-ok im changing it. ok it still works. now what?
-gah
-my head hurts
-
-i need game () to be playRound and number of playrounds = i
-can i google shit. imma google shit
 
 */
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound());
 
-for (let i = 0; i < 5; i++) {
-    func game() = playRound
+    }
+
+    if (playerScore == compScore) {
+        console.log('You tied the round');
+    } else if (playerScore > compScore) {
+        console.log('You won the round');
+    } else {
+        console.log('You lost the round')
+    }
+    
 
 }
 
 
+/* i put player and computer selection inside of playround so it would prompt
+and regenerate each round
 
+consolidated tie
 
+made a new function game() like they told me to
+made it a loop to 5 of the playround
+
+at the end of the 5 rounds, it shows the winner based on the score */
 
