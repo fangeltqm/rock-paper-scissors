@@ -11,39 +11,48 @@ buttons.forEach((button) => {
 
 function playRound(e) {
     playerSelection = e.target.id;
-    console.log('The player selected: ' + playerSelection);
     let computerSelection = choices[Math.floor(Math.random() * choices.length)];
-    console.log('The computer selected: ' + computerSelection)
 
+    const result = document.getElementById('result');
 
     if (playerSelection === computerSelection) {
-        console.log('TIE!');
+        result.textContent = 'TIE'
     
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        console.log('YOU WON!');
+        result.textContent = 'YOU WON'
         playerScore++;
 
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        console.log('YOU LOST!');
+        result.textContent = 'YOU LOST'
         compScore++;
     
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        console.log('YOU WON!');
+        result.textContent = 'YOU WON'
         playerScore++;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        console.log('YOU LOST!');
+        result.textContent = 'YOU LOST'
         compScore++;
    
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        console.log('YOU WON!');
+        result.textContent = 'YOU WON'
         playerScore++;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        console.log('YOU LOST');
+        result.textContent = 'YOU LOST'
         compScore++;
   
     }
-}
 
+    const playerSelect = document.querySelector('#playerSelect');
+    playerSelect.textContent = `You played ${playerSelection}`;
+
+    const computerSelect = document.getElementById('computerSelect');
+    computerSelect.textContent = `The computer played ${computerSelection}`;
+
+    
+
+
+
+}
 
 
 
