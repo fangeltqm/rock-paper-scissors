@@ -48,9 +48,35 @@ function playRound(e) {
     const computerSelect = document.getElementById('computerSelect');
     computerSelect.textContent = `The computer played ${computerSelection}`;
 
+    const userScore = document.getElementById('playerScore');
+    userScore.textContent = `Player Score ${playerScore}`;
+
+    const computScore = document.getElementById('compScore');
+    computScore.textContent = `Computer Score ${compScore}`;
+
+
+    if (playerScore === 5 || compScore === 5) {
+        const end = document.getElementById('end');
+        const game = document.createElement('div');
+        game.textContent = 'GAME OVER';
+        end.appendChild(game);
+        
+        const winner = document.createElement('div');
+       
+        if (playerScore === 5) {
+            winner.textContent = 'You won the round';
+        }
+        else {
+            winner.textContent = 'You lost the round'
+        }
+        end.appendChild(winner);
+
+        buttons.forEach((button) => {
+            button.removeEventListener('click', playRound);
+       
+        })
     
-
-
+    }
 
 }
 
