@@ -12,7 +12,10 @@ buttons.forEach((button) => {
 function playRound(e) {
     playerSelection = e.target.id;
     let computerSelection = choices[Math.floor(Math.random() * choices.length)];
-
+    
+    let selections = document.querySelector('.selections');
+    selections.style.display = 'block';
+    
     const result = document.getElementById('result');
 
     if (playerSelection === computerSelection) {
@@ -42,7 +45,7 @@ function playRound(e) {
   
     }
 
-    const playerSelect = document.querySelector('#playerSelect');
+    const playerSelect = document.getElementById('playerSelect');
     playerSelect.textContent = `You played ${playerSelection}`;
 
     const computerSelect = document.getElementById('computerSelect');
@@ -75,10 +78,44 @@ function playRound(e) {
             button.removeEventListener('click', playRound);
        
         })
-    
+
+        const again = document.createElement('button');
+        again.id = "playAgain"
+        again.textContent = 'Play Again';
+        end.appendChild(again);    
+
+        again.addEventListener('click', reset);
+
+        function reset(e) {
+            let selections = document.querySelector(".selections");
+            selections.style.display = "none";
+            
+            playerScore = 0;
+            compScore = 0;
+            result.textContent = '';
+            
+            userScore.textContent = `Player Score ${playerScore}`;
+            computScore.textContent = `Computer Score ${compScore}`;
+            game.textContent = '';
+            winner.textContent = '';
+
+            end.removeChild(again);
+
+
+            const selection = document.getElementsByClassName('selection');
+            Array.from(selection).forEach((selected) => {
+            selected.addEventListener('click', playRound);
+            });
+
+
+        }
+
+
     }
 
 }
+
+
 
 
 
