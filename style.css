@@ -96,7 +96,7 @@ h1 {
     transform: rotate(90deg);
 }
 
-.selection#scissors {
+.selection.scissors {
     transform: scaleY(-1);
 }
 
@@ -104,7 +104,7 @@ h1 {
     transform: scaleX(-1);
 }
 
-.computer-selection#scissors {
+.computer-selection.scissors {
     transform: scaleX(-1);
     transform: rotate(180deg);
 }
