@@ -3,17 +3,18 @@ const choices = ['rock', 'paper', 'scissors'];
 let playerScore = 0
 let compScore = 0
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-    button.addEventListener('click', playRound);
+const shoots = document.getElementsByClassName('selection');
+Array.from(shoots).forEach((shoot) => {
+    shoot.addEventListener('click', playRound);
 });
 
 function playRound(e) {
     playerSelection = e.target.id;
     let computerSelection = choices[Math.floor(Math.random() * choices.length)];
     
-    let selections = document.querySelector('.selections');
-    selections.style.display = 'block';
+    let selections = document.querySelectorAll('.selections');
+    selections[0].style.display = 'block';
+    selections[1].style.display = 'block';
     
     const result = document.getElementById('result');
 
@@ -48,23 +49,13 @@ function playRound(e) {
     if (playerScore === 5 || compScore === 5) {
         const end = document.getElementById('end');
         const game = document.createElement('div');
+        game.classList.add('game-over');
         game.textContent = 'GAME OVER';
         end.appendChild(game);
-        
-        const winner = document.createElement('div');
-       
-        if (playerScore === 5) {
-            winner.textContent = 'You won the round';
-        }
-        else {
-            winner.textContent = 'You lost the round'
-        }
-        end.appendChild(winner);
 
-        buttons.forEach((button) => {
-            button.removeEventListener('click', playRound);
-       
-        })
+        Array.from(shoots).forEach((shoot) => {
+            shoot.removeEventListener('click', playRound);
+        });
 
         const again = document.createElement('button');
         again.id = "playAgain"
@@ -74,8 +65,9 @@ function playRound(e) {
         again.addEventListener('click', reset);
 
         function reset(e) {
-            let selections = document.querySelector(".selections");
-            selections.style.display = "none";
+            let selections = document.querySelectorAll(".selections");
+            selections[0].style.display = "none";
+            selections[1].style.display = "none";
             
             playerScore = 0;
             compScore = 0;
@@ -84,13 +76,12 @@ function playRound(e) {
             userScore.textContent = `${playerScore}`;
             computScore.textContent = `${compScore}`;
             game.textContent = '';
-            winner.textContent = '';
 
             end.removeChild(again);
 
-            const buttons = document.querySelectorAll('button');
-            buttons.forEach((button) => {
-            button.addEventListener('click', playRound);
+            const shoots = document.getElementsByClassName('selection');
+            Array.from(shoots).forEach((shoot) => {
+            shoot.addEventListener('click', playRound);
             });
         }
     }

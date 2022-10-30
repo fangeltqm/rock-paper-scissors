@@ -2,6 +2,9 @@ body {
     margin: 0;
     background-color: #edf2f4;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
 }
 
@@ -9,7 +12,6 @@ h1 {
     margin: 0;
     font-weight: bold;
     font-size: 80px;
-    
 }
 
 .top {
@@ -37,10 +39,10 @@ h1 {
     justify-content: center;
     background-color: #ef233c;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     align-items: center;
-    height: 40px;
-    width: 125px;
+    height: 30px;
+    width: 100px;
 }
 
 #playerScore, #compScore {
@@ -49,9 +51,9 @@ h1 {
     align-items: center;
     background-color: white;
     color: #2b2d42;
-    width: 125px;
-    height: 85px;
-    font-size: 60px;
+    width: 100px;
+    height: 70px;
+    font-size: 50px;
 }
 
 #result {
@@ -68,14 +70,66 @@ h1 {
     display: flex;
     justify-content: space-between;
     
+    
 }
 
 .column {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+
+}
+
+.selection, .computer-selection {
+    background-color: white;
+    border-color: #ef233c;
+}
+
+.computer-selection {
+    border-style: solid;
+}
+
+.image {
+    height: 85px;
+    width: 90px;
+    transform: rotate(90deg);
+}
+
+.selection#scissors {
+    transform: scaleY(-1);
+}
+
+.computer-selection {
+    transform: scaleX(-1);
+}
+
+.computer-selection#scissors {
+    transform: scaleX(-1);
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+#end {
+    text-align: center;
+}
+
+#playAgain {
+    background-color: #8d99ae;
+    color: #edf2f4;
+    border-radius: 8px;
+    padding: 10px 10px;
+
+}
+
+.game-over {
+    color:#d90429;
+    font-size: 30px;
+    font-style: italic;
 
 }
 
@@ -85,6 +139,7 @@ h1 {
     color: #edf2f4;
     padding: 10px;
     font-size: smaller;
+    margin-top: auto;
 
 
 }
