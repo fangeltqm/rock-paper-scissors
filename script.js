@@ -8,7 +8,6 @@ buttons.forEach((button) => {
     button.addEventListener('click', playRound);
 });
 
-
 function playRound(e) {
     playerSelection = e.target.id;
     let computerSelection = choices[Math.floor(Math.random() * choices.length)];
@@ -19,30 +18,18 @@ function playRound(e) {
     const result = document.getElementById('result');
 
     if (playerSelection === computerSelection) {
-        result.textContent = 'TIE'
+        result.textContent = 'TIE';
     
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        result.textContent = 'YOU WON'
+    } else if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
+               (playerSelection === 'paper' && computerSelection === 'rock') ||
+               (playerSelection === 'scissors' && computerSelection === 'paper')) {
+        result.textContent = 'YOU WON';
         playerScore++;
 
-    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        result.textContent = 'YOU LOST'
+    } else {
+        result.textContent = 'YOU LOST';
         compScore++;
-    
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        result.textContent = 'YOU WON'
-        playerScore++;
-    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        result.textContent = 'YOU LOST'
-        compScore++;
-   
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        result.textContent = 'YOU WON'
-        playerScore++;
-    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        result.textContent = 'YOU LOST'
-        compScore++;
-  
+
     }
 
     const playerSelect = document.getElementById('playerSelect');
@@ -52,10 +39,10 @@ function playRound(e) {
     computerSelect.textContent = `The computer played ${computerSelection}`;
 
     const userScore = document.getElementById('playerScore');
-    userScore.textContent = `Player Score ${playerScore}`;
+    userScore.textContent = `${playerScore}`;
 
     const computScore = document.getElementById('compScore');
-    computScore.textContent = `Computer Score ${compScore}`;
+    computScore.textContent = `${compScore}`;
 
 
     if (playerScore === 5 || compScore === 5) {
@@ -94,49 +81,17 @@ function playRound(e) {
             compScore = 0;
             result.textContent = '';
             
-            userScore.textContent = `Player Score ${playerScore}`;
-            computScore.textContent = `Computer Score ${compScore}`;
+            userScore.textContent = `${playerScore}`;
+            computScore.textContent = `${compScore}`;
             game.textContent = '';
             winner.textContent = '';
 
             end.removeChild(again);
 
-
-            const selection = document.getElementsByClassName('selection');
-            Array.from(selection).forEach((selected) => {
-            selected.addEventListener('click', playRound);
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach((button) => {
+            button.addEventListener('click', playRound);
             });
-
-
         }
-
-
     }
-
 }
-
-
-
-
-
-
-
-/*
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound());
-
-    }
-
-    if (playerScore == compScore) {
-        console.log('You tied the round');
-    } else if (playerScore > compScore) {
-        console.log('You won the round');
-    } else {
-        console.log('You lost the round')
-    }
-    
-
-}
-
-*/

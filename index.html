@@ -3,28 +3,53 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
         <script src="script.js" defer></script>
 
     </head>
 
     <body>
-        <button class="selection" id="rock">Rock</button>
-        <button class="selection" id="paper">Paper</button>
-        <button class="selection" id="scissors">Scissors</button>
-
-        <div class = "selections">
-            <div id="playerSelect"></div>
-            <div id="computerSelect"></div>
+        <div class="top">
+            <h1>ROCK PAPER SCISSORS</h1>
+            <div class="instructions">FIRST TO 5 WINS</div>
         </div>
 
-        <div id="result"></div>
-        
-        <div class = "scoreboard">
-            <div id="playerScore">Player Score 0</div>
-            <div id="compScore">Computer Score 0</div>
+         <div class="scoreboard">
+            <div class="player-score">
+                <div class="who">Player</div>
+                <div id="playerScore">0</div>
+            </div>
+            <div id="result"></div>
+            <div class="computer-score">
+                <div class="who">Computer</div>
+                <div id="compScore">0</div>
+            </div>
         </div>
+
+        <div class="container">
+            <div class="column">
+                <button class="selection" id="rock">Rock</button>
+                <button class="selection" id="paper">Paper</button>
+                <button class="selection" id="scissors">Scissors</button>
+            </div>
+            <div class = "selections">
+                <div id="playerSelect"></div>
+                <div id="computerSelect"></div>
+            </div>
+            <div class="column">
+                <img> rock
+                <img> paper
+                <img> scissors
+            </div>
+        </div>
+       
         
         <div id="end"></div>
+
+        <div class="footer">Copyright &copy; 2022 The Queer Millennial</div>
 
 
     </body>

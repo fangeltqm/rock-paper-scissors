@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    background-color: #edf2f4;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+h1 {  
+    margin: 0;
+    font-weight: bold;
+    font-size: 80px;
+    
+}
+
+.top {
+    color: #2b2d42;
+    text-align: center;
+}
+
+.instructions {
+    font-size: large;
+}
+
+.scoreboard, #result, .container, #end {
+    padding: 0 10rem;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+.who {
+    display: flex;
+    justify-content: center;
+    background-color: #ef233c;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+    height: 40px;
+    width: 125px;
+}
+
+#playerScore, #compScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #2b2d42;
+    width: 125px;
+    height: 85px;
+    font-size: 60px;
+}
+
+#result {
+    display: flex;
+    align-items: center;
+    color: #d90429;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.container {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.column {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.footer {
+    text-align: center;
+    background-color: #2b2d42;
+    color: #edf2f4;
+    padding: 10px;
+    font-size: smaller;
+
+
+}
