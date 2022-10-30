@@ -32,12 +32,34 @@ function playRound(e) {
         compScore++;
 
     }
+    
+    const playerSelect = document.getElementById('playerPic');
+    if (playerSelection === 'rock') {
+        playerPic.src="images/rock.png";
+    }
+    else if (playerSelection === 'paper') {
+        playerPic.src="images/paper.png";
+    }
+    else {
+        playerPic.src="images/scissors.png";
+    }
+    
+    const computerSelect = document.getElementById('compPic');
+    if (computerSelection === 'rock') {
+        compPic.src="images/rock.png";
+    }
+    else if (computerSelection === 'paper') {
+        compPic.src="images/paper.png";
+    }
+    else {
+        compPic.src="images/scissors.png";
+    }
+   
 
-    const playerSelect = document.getElementById('playerSelect');
-    playerSelect.textContent = `You played ${playerSelection}`;
+    
 
-    const computerSelect = document.getElementById('computerSelect');
-    computerSelect.textContent = `The computer played ${computerSelection}`;
+    //computerSelect.textContent = `The computer played ${computerSelection}`;
+    
 
     const userScore = document.getElementById('playerScore');
     userScore.textContent = `${playerScore}`;

@@ -69,6 +69,7 @@ h1 {
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
     
 }
@@ -81,41 +82,45 @@ h1 {
 
 }
 
-.selection, .computer-selection {
+.selection {
     background-color: white;
     border-color: #ef233c;
 }
 
 .computer-selection {
     border-style: solid;
+    border-color: #ef233c;
+    background-color: #edf2f4;
 }
 
-.image {
-    height: 85px;
-    width: 90px;
+.image, #playerPic, #compPic {
+    height: 90px;
+    width: 85px;
+    
+}
+
+.selection .image {
     transform: rotate(90deg);
 }
 
-.selection.scissors {
-    transform: scaleY(-1);
+.computer-selection .image {
+    transform: rotate(-90deg) scaleX(-1);
 }
 
-.computer-selection {
-    transform: scaleX(-1);
+#playerPic {
+    transform: rotate(90deg);
 }
 
-.computer-selection.scissors {
-    transform: scaleX(-1);
-    transform: rotate(180deg);
+#compPic {
+    transform: rotate(-90deg) scaleX(-1);
+   
 }
-
-
-
 
 
 
 #end {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 #playAgain {
@@ -123,6 +128,7 @@ h1 {
     color: #edf2f4;
     border-radius: 8px;
     padding: 10px 10px;
+    font-size: 20px;
 
 }
 
