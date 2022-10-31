@@ -55,12 +55,6 @@ function playRound(e) {
         compPic.src="images/scissors.png";
     }
    
-
-    
-
-    //computerSelect.textContent = `The computer played ${computerSelection}`;
-    
-
     const userScore = document.getElementById('playerScore');
     userScore.textContent = `${playerScore}`;
 
