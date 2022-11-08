@@ -2,6 +2,9 @@ const choices = ['rock', 'paper', 'scissors'];
 
 let playerScore = 0
 let compScore = 0
+let selections = document.querySelectorAll(".selections");
+selections[0].style.display = "none";
+selections[1].style.display = "none";
 
 const shoots = document.getElementsByClassName('selection');
 Array.from(shoots).forEach((shoot) => {
